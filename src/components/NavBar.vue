@@ -17,7 +17,6 @@ export default {
 
 <style>
 nav {
-  background-color: #8efffa;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -27,9 +26,14 @@ nav {
 #logo-text{
   flex-grow: 1;
   background-color: #01bdbd;
-  padding-left: 1rem;
+  margin: 1rem 0 1rem 0.5rem;
+  padding-left: 3rem;
   border-radius: 25px 0 0 25px;
   color: #f8fdff;
+  box-shadow:
+      inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+      0 0 0 2px rgb(255, 255, 255),
+      0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 #logo > img {
