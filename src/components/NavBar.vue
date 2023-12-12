@@ -28,7 +28,7 @@ nav {
   flex-grow: 1;
   background-color: #01bdbd;
   padding-left: 1rem;
-  border-radius: 25px 0px 0px 25px;
+  border-radius: 25px 0 0 25px;
   color: #f8fdff;
 }
 
