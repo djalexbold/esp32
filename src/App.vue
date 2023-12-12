@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="logo" src="./assets/esp32-logo.png">
-
+    <header>
+      <NavBar />
+    </header>
+    <main>
+      <AppMain />
+    </main>
+    <AppFooter />
   </div>
 </template>
 
 <script>
-
+import NavBar from "./components/NavBar.vue";
+import AppFooter from "./components/AppFooter.vue";
+import AppMain from "./components/AppMain.vue";
 
 export default {
   name: 'App',
   components: {
-
+    NavBar,
+    AppMain,
+    AppFooter,
   }
 }
 </script>
@@ -21,9 +30,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  margin: auto;
   color: #2c3e50;
-  margin-top: 30px;
   background-color: #fafafa;
 }
+
 </style>
