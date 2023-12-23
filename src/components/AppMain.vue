@@ -1,43 +1,94 @@
 <template>
+
   <div id="main-form">
-    <div id="form">
-      <h4>Sensor 1</h4>
-    </div>
-    <div id="form">
-      <h4>Sensor 2</h4>
-      <ul>
-        <li>temperature: 34</li>
-        <li>Humidity:33</li>
-        <li>Pressure:4</li>
-      </ul>
-    </div>
-    <div id="form">
-      <h4>Sensor 3</h4>
-    </div>
-    <div id="form">
-      <h4>Sensor 4</h4>
-    </div>
-    <div id="form">
-      <h4>Sensor 5</h4>
-      <ul>
-        <li>temperature: 34</li>
-      </ul>
-    </div>
+    <template v-for="item in sensors">
+      <div id="form" @click="showModal(item)">
+        <h4>Sensor {{ item.id }}</h4>
+        <ul>
+          <li>Temperature: {{ item.temperature }} C°</li>
+          <li>Humidity: {{ item.humidity }} %</li>
+          <li>Pressure: {{ item.pressure }} mmhg</li>
+        </ul>
+      </div>
+    </template>
+    <ModalWindow
+        v-show="isModalVisible"
+        @close="closeModal"
+        v-bind:message="modalId"
+    />
   </div>
 </template>
 
 <script>
+import ModalWindow from "@/components/ModalWindow.vue";
+import Mixins from "@/mixins/mixins";
+
 export default {
   name: "AppMain",
+  components: {
+    ModalWindow
+  },
+
+  data() {
+    return {
+      modalId: [],
+      isModalVisible: false,
+      sensors: [
+        {
+          id: 1,
+          temperature: -14,
+          humidity: 75,
+          pressure: 745,
+          waterlevel: 11,
+          acidity: 45
+        },
+        {
+          id: 2,
+          temperature: -5,
+          humidity: 70,
+          pressure: 740
+        },
+        {
+          id: 3,
+          temperature: -12,
+          humidity: 65,
+          pressure: 735
+        },
+        {
+          id: 4,
+          temperature: -11,
+          humidity: 70,
+          pressure: 742,
+          acidity: 89
+        },
+        {
+          id: 5,
+          temperature: -14,
+          humidity: 76,
+          pressure: 748
+        },
+      ]
+    }
+  }
+  ,
   methods: {
+    showModal(item) {
+      this.isModalVisible = true;
+      this.modalId = item
+
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
     currentYear() {
       let now = new Date();
       return now.getFullYear();
     },
   },
+  mixins: [Mixins],
 };
-</script>
 
+</script>
 
 <style>
 #main-form {
@@ -55,7 +106,6 @@ export default {
 }
 
 #form > ul {
-  background-color: blueviolet;
   list-style-type: none;
   width: 100%;
   padding-left: 0;
@@ -76,4 +126,8 @@ export default {
   box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
   0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
+
+/*  модальное окно  */
+
+
 </style>
