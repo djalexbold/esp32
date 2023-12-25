@@ -15,7 +15,7 @@
           x
         </button>
         <div>
-          <h4>Sensor {{ message.id }}</h4>
+          <h4> {{ message.name }} </h4>
           <ul>
             <li>Temperature: {{ message.temperature }} C°</li>
             <li>Humidity: {{ message.humidity }} %</li>
@@ -55,7 +55,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 10%;
+  padding-top: 15em;
 }
 
 .modal {
@@ -66,8 +66,8 @@ export default {
   0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
   overflow-x: auto;
   display: flex;
-  width: 300px;
-  height: 175px;
+  width: 30em;
+  height: 20em;
   flex-direction: column;
 }
 
@@ -81,5 +81,7 @@ export default {
   color: white;
   background: #009f9f;
 }
-
+.modal h4 {
+  padding-left: 10px;
+}
 </style>

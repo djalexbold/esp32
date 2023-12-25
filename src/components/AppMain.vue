@@ -3,7 +3,7 @@
   <div id="main-form">
     <template v-for="item in sensors">
       <div id="form" @click="showModal(item)">
-        <h4>Sensor {{ item.id }}</h4>
+        <h4>{{ item.id }}-{{item.name}}</h4>
         <ul>
           <li>Temperature: {{ item.temperature }} C°</li>
           <li>Humidity: {{ item.humidity }} %</li>
@@ -36,6 +36,7 @@ export default {
       sensors: [
         {
           id: 1,
+          name: 'Home',
           temperature: -14,
           humidity: 75,
           pressure: 745,
@@ -44,18 +45,21 @@ export default {
         },
         {
           id: 2,
+          name: 'Terrace',
           temperature: -5,
           humidity: 70,
           pressure: 740
         },
         {
           id: 3,
+          name: 'Garden',
           temperature: -12,
           humidity: 65,
           pressure: 735
         },
         {
           id: 4,
+          name: 'Construction',
           temperature: -11,
           humidity: 70,
           pressure: 742,
@@ -63,6 +67,7 @@ export default {
         },
         {
           id: 5,
+          name: 'sdgfdfgfd sdffgfg',
           temperature: -14,
           humidity: 76,
           pressure: 748
@@ -112,6 +117,8 @@ export default {
 }
 
 #form {
+  user-select: none;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
