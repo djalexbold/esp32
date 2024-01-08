@@ -20,8 +20,8 @@
             <li>Temperature: {{ message.temperature }} C°</li>
             <li>Humidity: {{ message.humidity }} %</li>
             <li>Pressure: {{ message.pressure }} mmhg</li>
-            <li>Pressure: {{ message.waterlevel }} m</li>
-            <li>Pressure: {{ message.acidity }} %</li>
+            <li>Water level: {{ message.waterlevel }} m</li>
+            <li>Acidity: {{ message.acidity }} %</li>
           </ul>
         </div>
       </div>

@@ -74,8 +74,7 @@ export default {
         },
       ]
     }
-  }
-  ,
+  },
   methods: {
     showModal(item) {
       this.isModalVisible = true;
